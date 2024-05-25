@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+user_id=$(id -u)
+image=node
+port=8080
+
+docker run --rm --init -it -w /usr/src/app -v $PWD:/usr/src/app -u $user_id:$user_id -p $port:$port $image npx $@
